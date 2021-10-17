@@ -31,7 +31,7 @@
   1. BIOS-Main-Boot Features: **CMS Support [No]**, **Fast Boot [Disabled]** 
   2. BIOS-Advanced-Intel Advanced Menu-Power&Performance-CPU Power Management Control: **CFG Lock [Disabled]** 
 
-- 使用附带的OpenCore Configurator打开（或者自行下载，对应0.6.6版本）
+- 使用附带的OpenCore Configurator打开（或者自行下载，对应0.7.4版本）
   1. 生成合适的三码
   2. Show Picker打开，或者开机按Alt键，否则开机选择界面不出现，自动跳转Windows
   3. EFI文件夹复制到macOS安装器，即可开始安装
@@ -44,11 +44,16 @@
 
 ## 更新记录
 
-### 2021.10.17 v2
+### 2021.10.17 v1.3
+
+* 更新OpenCore到最新版本0.7.4
+* 修复主题bug（via Theme Validator)
+
+### 2021.10.16 v1.2
 
 * 更新大部分kext到最新
 
-### 2021.10.16
+### 2021.10.16 v1.0
 
 * 更新itlwm到2.0.0，老版本Wi-Fi容易掉且不稳定
 * 更新IntelBluetoothFirmware到2.0.1
