@@ -38,21 +38,21 @@
   2. Show Picker打开，或者开机按Alt键，否则开机选择界面不出现，自动跳转Windows
   3. EFI文件夹复制到macOS安装器，即可开始安装
 
-- 安装完后必须的设置
-  1. 电源选项： **Put hard disk to sleep when possible [Disabled]**，否则睡死
-  2. 执行以下命令彻底关闭睡眠
-  ```
-  # 复制粘贴以下运行结果，备份
-  pmset -g
-  # 完全禁用sleep
-  sudo pmset -a sleep 0
-  sudo pmset -a hibernatemode 0
-  sudo pmset -a disablesleep 1
-  # 如睡眠问题已修复，可以执行如下命令解除完全睡眠
-  sudo pmset -a sleep 1
-  sudo pmset -a hibernatemode [之前备份的值]
-  sudo pmset -a disablesleep 0
-  ```
+  - 安装完后必须的设置
+    1. 电源选项： **Put hard disk to sleep when possible [Disabled]**，否则睡死
+    2. 执行以下命令彻底关闭睡眠
+    ```
+    # 复制粘贴以下运行结果，备份
+    pmset -g
+    # 完全禁用sleep
+    sudo pmset -a sleep 0
+    sudo pmset -a hibernatemode 0
+    sudo pmset -a disablesleep 1
+    # 如睡眠问题已修复，可以执行如下命令解除禁用
+    sudo pmset -a sleep 1
+    sudo pmset -a hibernatemode [之前备份的值]
+    sudo pmset -a disablesleep 0
+    ```
 
 
 - 注意：Z980不兼容！
