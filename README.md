@@ -17,13 +17,15 @@
 - [x] 声卡（扬声器，3.5mm耳机）
 - [x] 显卡（HEVC+H.264 4K双硬解；HDMI输出最高2K@60）
 - [x] Wi-Fi/蓝牙（Airdrop；Handoff）
-- [x] 电源（电量显示；原生电源管理；CPU变频；睡眠一晚掉电4%）
+- [x] 电源（电量显示；原生电源管理；CPU变频；）
+- [ ] 睡眠（睡死，暂时不能开启睡眠）
 - [ ] 键盘（仅F4 F8 F10 F11 F12可正常使用）
 - [x] 触控板
 - [x] USB定制
 - [x] iServices
 - [ ] 雷电 3
 - [x] 读卡器，睡眠唤醒后可能丢失
+
 
 ## 使用
 
@@ -38,6 +40,20 @@
 
 - 安装完后必须的设置
   1. 电源选项： **Put hard disk to sleep when possible [Disabled]**，否则睡死
+  2. 执行以下命令彻底关闭睡眠
+  ```
+  # 复制粘贴以下运行结果，备份
+  pmset -g
+  # 完全禁用sleep
+  sudo pmset -a sleep 0
+  sudo pmset -a hibernatemode 0
+  sudo pmset -a disablesleep 1
+  # 如睡眠问题已修复，可以执行如下命令解除完全睡眠
+  sudo pmset -a sleep 1
+  sudo pmset -a hibernatemode [之前备份的值]
+  sudo pmset -a disablesleep 0
+  ```
+
 
 - 注意：Z980不兼容！
 
