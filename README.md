@@ -13,6 +13,14 @@
 | 网卡 | Intel AC-9560|
 | 蓝牙 | Intel AC-9560|
 
+## macOS 支持情况
+
+- 已测试
+  - macOS 11.2
+  - macOS 11.2.3
+  - macOS 11.6(由11.2.3直升)
+- 理论上支持11.x版本直升
+
 ## 工作情况
 - [x] 声卡（扬声器，3.5mm耳机）
 - [x] 显卡（HEVC+H.264 4K双硬解；HDMI输出最高2K@60）
@@ -35,30 +43,33 @@
 
 - 使用附带的OpenCore Configurator打开（或者自行下载，对应0.7.4版本）
   1. 生成合适的三码
-  2. Show Picker打开，或者开机按Alt键，否则开机选择界面不出现，自动跳转Windows
-  3. EFI文件夹复制到macOS安装器，即可开始安装
+  2. EFI文件夹复制到macOS安装器，即可开始安装
 
-  - 安装完后必须的设置
-    1. 电源选项： **Put hard disk to sleep when possible [Disabled]**，否则睡死
-    2. 执行以下命令彻底关闭睡眠
-    ```
-    # 复制粘贴以下运行结果，备份
-    pmset -g
-    # 完全禁用sleep
-    sudo pmset -a sleep 0
-    sudo pmset -a hibernatemode 0
-    sudo pmset -a disablesleep 1
-    # 如睡眠问题已修复，可以执行如下命令解除禁用
-    sudo pmset -a sleep 1
-    sudo pmset -a hibernatemode [之前备份的值]
-    sudo pmset -a disablesleep 0
-    ```
-
-
-- 注意：Z980不兼容！
+- 安装完后必须的设置
+  1. 电源选项： **Put hard disk to sleep when possible [Disabled]**，否则睡死
+  2. 触控板设置：Force Click关闭
+  3. 执行以下命令彻底关闭睡眠
+  ```
+  # 复制粘贴以下运行结果，备份
+  pmset -g
+  # 完全禁用sleep
+  sudo pmset -a sleep 0
+  sudo pmset -a hibernatemode 0
+  sudo pmset -a disablesleep 1
+  # 如睡眠问题已修复，可以执行如下命令解除禁用
+  sudo pmset -a sleep 1
+  sudo pmset -a hibernatemode [之前备份的值]
+  sudo pmset -a disablesleep 0
+  ```
 
 
 ## 更新记录
+
+### 2021.10.20 v1.4
+
+* 关闭开机声音，会导致无法进入系统
+* 修复触控板失效的问题
+* USB定制
 
 ### 2021.10.17 v1.3
 
@@ -74,6 +85,11 @@
 * 更新itlwm到2.0.0，老版本Wi-Fi容易掉且不稳定
 * 更新IntelBluetoothFirmware到2.0.1
 * AppleALC更新会导致声音丢失
+
+## 未来更新
+
+* 睡眠
+* 雷电3驱动
 
 ## Reference
 
