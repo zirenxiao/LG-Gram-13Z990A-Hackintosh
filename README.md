@@ -18,7 +18,9 @@
 - 已测试
   - macOS 11.2
   - macOS 11.2.3
-  - macOS 11.6.3 最稳定
+  - macOS 11.6.3
+  - macOS 11.6.4
+  - macOS 12.2.1
 
 ## 工作情况
 - [x] 声卡（扬声器，3.5mm耳机）
@@ -31,7 +33,7 @@
 - [x] USB定制
 - [x] iServices
 - [ ] 雷电 3
-- [x] 读卡器，睡眠唤醒后可能丢失
+- [x] 读卡器，有小概率导致无法启动系统，原因未知
 
 
 ## 使用
@@ -40,8 +42,8 @@
   1. BIOS-Main-Boot Features: **CMS Support [No]**, **Fast Boot [Disabled]** 
   2. BIOS-Advanced-Intel Advanced Menu-Power&Performance-CPU Power Management Control: **CFG Lock [Disabled]** 
 
-- 使用附带的OpenCore Configurator打开（或者自行下载，对应0.7.4版本）
-  1. 生成合适的三码
+- 使用OpenCore Configurator打开（对应0.7.4版本）
+  1. 选择机型MacBookPro15,2，生成合适的三码
   2. EFI文件夹复制到macOS安装器，即可开始安装
 
 - 安装完后必须的设置
@@ -63,6 +65,11 @@
 
 
 ## 更新记录
+
+### 2022.03.12 v1.6
+
+* 更新驱动版本至最新
+* 自动切换Intel Wi-Fi驱动，同时兼容11.x和12.x
 
 ### 2022.02.14 v1.5
 
