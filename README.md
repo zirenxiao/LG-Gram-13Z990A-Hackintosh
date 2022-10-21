@@ -1,5 +1,11 @@
 # LG Gram 13Z990A OpenCore
 
+## Latest Update
+
+由于机器已出手，故不再更新。现有EFI可以正常运行。
+
+This repository will be no longer updated, existing EFI files work up to macOS 12.2.1.
+
 ## 配置
 
 |      | 详情   |
